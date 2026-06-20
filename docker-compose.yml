@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres:18
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - progresDB:/var/lib/postgresql
+    env_file:
+      - .env
+
+volumes:
+  progresDB:
