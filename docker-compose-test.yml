@@ -1,13 +1,13 @@
 services:
   postgres:
     image: postgres:18
-    container_name: postgres
+    container_name: postgres_test
     ports:
       - "5432:5432"
     volumes:
-      - progresDB:/var/lib/postgresql
+      - progresDB_test:/var/lib/postgresql
     env_file:
-      - .env
+      - .env.test
 
 volumes:
-  progresDB:
+  progresDB_test:

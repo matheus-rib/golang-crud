@@ -18,7 +18,7 @@ func showTask(context *gin.Context) {
 		return
 	}
 
-	context.JSON(http.StatusOK, task)
+	context.JSON(http.StatusOK, gin.H{"data": task})
 }
 
 func createTask(context *gin.Context) {

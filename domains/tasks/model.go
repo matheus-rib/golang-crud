@@ -6,10 +6,10 @@ type Task struct {
 	Completed bool   `json:"completed"`
 }
 
-type createTaskInput struct {
+type CreateTaskInput struct {
 	Name string `json:"name" binding:"required"`
 }
 
-type updateTaskNameInput struct {
+type UpdateTaskNameInput struct {
 	Name string `json:"name" binding:"required"`
 }

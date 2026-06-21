@@ -28,7 +28,7 @@ func findTask(context *gin.Context) (Task, error) {
 }
 
 func insertTask(context *gin.Context) (Task, error) {
-	var input createTaskInput
+	var input CreateTaskInput
 	err := context.ShouldBindJSON(&input)
 
 	if err != nil {
@@ -56,7 +56,7 @@ func updateTaskName(context *gin.Context) (Task, error, int) {
 		return task, err, http.StatusNotFound
 	}
 
-	var input updateTaskNameInput
+	var input UpdateTaskNameInput
 	err = context.ShouldBindJSON(&input)
 
 	if err != nil {

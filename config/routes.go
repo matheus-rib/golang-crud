@@ -6,9 +6,17 @@ import (
 	"github.com/matheus-rib/golang-crud/domains/tasks"
 )
 
-func RegisterRoutes(router *gin.Engine) {
+func registerRoutes(router *gin.Engine) {
 	api := router.Group("/")
 
 	healthCheck.RegisterRoutes(api)
 	tasks.RegisterRoutes(api)
+}
+
+func SetupRouter() *gin.Engine {
+	router := gin.Default()
+
+	registerRoutes(router)
+
+	return router
 }

@@ -9,6 +9,7 @@ First contact with Golang, a simple to-do CRUD using [Gin](https://gin-gonic.com
   - [Project features](#project-features)
   - [Requirements](#requirements)
   - [How to run](#how-to-run)
+  - [Testing](#testing)
   - [Commands](#commands)
     - [Install dependencies](#install-dependencies)
     - [Run database](#run-database)
@@ -21,11 +22,12 @@ This is not intended to be professional, or follow the bestest guidelines and re
 - Basic CRUD operations (GET, POST, PUT, PATCH, DELETE - No pagination or filters)
 - DDD-ish approach
 - Running with postgres with docker container setup
-- Testing (soon)
+- Basic integration test
 
 ## Requirements
 - Go 1.26.4
 - Docker (and docker compose)
+- make (for convenience with tests)
 
 ## How to run
 - [Install dependencies](#install-dependencies)
@@ -33,6 +35,10 @@ This is not intended to be professional, or follow the bestest guidelines and re
   - copy `.env.example` > `.env` and it should be all good to go
 - [Run the database](#run-database)
 - [Run the API](#run-api)
+
+## Testing
+- Run `make test`
+  - Or run an independent database service (check [docker-compose-test.yml](https://github.com/matheus-rib/golang-crud/blob/main/docker-compose-test.yml)) and then `go test -tags=integration ./...`
 
 ## Commands
 
